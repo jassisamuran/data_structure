@@ -2,6 +2,7 @@
   "files.associations": {
     "*.json": "html",
     "BitAnd.C": "cpp",
-    "BitXor.C": "cpp"
+    "BitXor.C": "cpp",
+    "bit_solutions_in_c": "c"
   }
 }

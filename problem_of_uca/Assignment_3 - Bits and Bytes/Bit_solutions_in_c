@@ -57,3 +57,8 @@ int logicalShift(int x, int n) {
     int mask = ~(1 << 31 >> n << 1);          // mask for clearing the sign-extended bits
     return shiftRight & mask;                 // Step 3: Logical AND to clear sign-extended bits
 }
+
+// Q4. GetByte
+int getByte(int x, int n) {
+    return (x >> (n << 3)) & 0xFF; //0xFF last 8 value 11111111
+}

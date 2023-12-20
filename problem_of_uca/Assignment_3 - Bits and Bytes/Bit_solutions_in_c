@@ -34,3 +34,7 @@ int main() {
 
     return 0;
 }
+int invert(int x, int p, int n) {
+    int mask = (~(~0 << n)) << p;  //mask for getting result
+    return x ^ mask;               // XOR
+}

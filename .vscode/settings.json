@@ -1,6 +1,7 @@
 {
   "files.associations": {
     "*.json": "html",
-    "BitAnd.C": "cpp"
+    "BitAnd.C": "cpp",
+    "BitXor.C": "cpp"
   }
 }

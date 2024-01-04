@@ -21,3 +21,5 @@ class Solution
     return isSubTree(T->left,S)||isSubTree(T->right,S);
     }
 };
+// time complexity o(n*n) 
+// space complexity o(n)

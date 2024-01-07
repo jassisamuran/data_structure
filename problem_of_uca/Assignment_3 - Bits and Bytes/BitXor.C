@@ -1,0 +1,46 @@
+#include <stdio.h>
+
+int bitXor(int x, int y) {
+    int a = x & ~y;
+    int b = ~x & y;
+    int result = ~(~a & ~b);
+    return result;
+}
+
+int main() {
+    int x = 4;
+    int y = 5;
+    int result = bitXor(x, y);
+
+    printf("bitXor(%d, %d) = %d\n", x, y, result);
+
+    return 0;
+}
+int invert(int x, int p, int n) {
+    int mask = (~(~0 << n)) << p;  //mask for getting result
+    return x ^ mask;               // XOR
+}
+
+// Q7 bang
+
+int bang(int x) {
+    return ((x | (~x + 1)) >> 31) + 1;
+}
+
+// Q6. Conditional
+int conditional(int x, int y, int z) {
+    int mask = ((!x) << 31) >> 31;  // If x is non-zero, mask = 0xFFFFFFFF; otherwise, mask = 0x00000000
+    return (y & mask) | (z & ~mask); // Select y when x is non-zero, otherwise select z
+}
+
+// Q5. LogicalShift
+int logicalShift(int x, int n) {
+    int shiftRight = x >> n;                  // Arithmetic right shift x by n
+    int mask = ~(1 << 31 >> n << 1);          // mask for clearing the sign-extended bits
+    return shiftRight & mask;                 // Step 3: Logical AND to clear sign-extended bits
+}
+
+// Q4. GetByte  
+int getByte(int x, int n) {
+        return (x >> (n << 3)) & 0xFF; //0xFF last 8 value 11111111
+}

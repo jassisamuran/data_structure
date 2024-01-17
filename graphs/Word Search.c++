@@ -22,3 +22,5 @@ public:
        return 0;
     }
 };
+// time complexity o(n*m*4^L) n is no of rows. m is no of columns. L is length of word 
+// space complexity o(1)

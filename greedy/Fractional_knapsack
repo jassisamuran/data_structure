@@ -1,0 +1,38 @@
+// class implemented
+/*
+struct Item{
+    int value;
+    int weight;
+};
+*/
+
+class Solution {
+  public:
+  bool static cmp(Item i,Item j){
+      double ii=double(i.value)/double(i.weight);
+      double jj=double(j.value)/double(j.weight);
+      return ii>jj;
+  }
+    // Function to get the maximum total value in the knapsack.
+    double fractionalKnapsack(int w, Item arr[], int n) {
+        // Your code here
+        sort(arr,arr+n,cmp);
+        double wi=0,vl=0; 
+        for(int i=0; i<n; i++){
+            if(wi+arr[i].weight<=w){
+                wi+=arr[i].weight;
+                vl+=arr[i].value;
+                
+            }else{
+                int rem=w-wi;
+                double fn=arr[i].value/double(arr[i].weight)*double(rem);
+                vl+=fn;
+                break; 
+            }
+        }
+    return vl;
+        
+    }
+};
+time complexity o(nlog n +n )
+space complexity o(1)
